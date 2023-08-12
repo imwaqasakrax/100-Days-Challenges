@@ -1,1 +1,69 @@
+                                                                  Program 3.1
+Write a program that works out whether if a given number is an odd or even number.
+Even numbers can be divided by 2 with no remainder.
+e.g. 86 is even because 86 ÷ 2 = 43
+number = int(input("Which number do you want to check? "))
+if number % 2 ==0 :
+    print("This is an even number")
+else :
+    print("This is an odd number")
 
+..........................................................................................................................................................................
+
+                                                                  Program 3.2
+
+Write a program that interprets the Body Mass Index (BMI) based on a user's weight and height.
+It should tell them the interpretation of their BMI based on the BMI value.
+Under 18.5 they are underweight
+Over 18.5 but below 25 they have a normal weight
+Over 25 but below 30 they are slightly overweight
+Over 30 but below 35 they are obese
+Above 35 they are clinically obese.
+
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+bmi = weight / height ** 2
+bmi_rounded = round(bmi)
+if bmi_rounded < 18.5:
+print(f"Your BMI is {bmi_rounded}, you are underweight >:)")
+elif bmi_rounded < 25:
+print(f"Your BMI is {bmi_rounded}, your weight is normal")
+elif bmi_rounded < 30:
+print(f"Your BMI is {bmi_rounded}, you are overweight")
+elif bmi_rounded < 35 :
+print(f"Your BMI is {bmi_rounded}, you are obese")
+else:
+print(f"Your BMI is {bmi_rounded}, you are clinically obese")
+
+..........................................................................................................................................................................
+
+                                                                  Program 2.3
+Create a program using maths and f-Strings that tells us how many days, weeks, months we have left if we live until 90 years old.
+It will take your current age as the input and output a message with our time left in this format:
+You have x days, y weeks, and z months left.
+Where x, y and z are replaced with the actual calculated numbers.
+Warning your output should match the Example Output format exactly, even the positions of the commas and full stops.
+age = input("What is your current age? ")
+new_age  =  int(age)
+year = 90 - new_age
+months = round(12 * new_age)
+weeks =  round(52 * new_age)
+days =   round(365 * new_age)
+print(f"You have {days} days, {weeks} weeks, and {months} months left.")
+
+
+
+..........................................................................................................................................................................
+
+                                                                  Program 2.4
+Tip Calculation 
+
+print("Wellcome to the tip calculator")
+bill = float(input("What was the total bill ? $ \n "))
+tip = int(input("What percentage world to like to pay ? 10 , 12 or 15: \n"))
+people = int(input("How many people to split the bill \n"))
+tip_percentage = (bill *tip)/100
+total_bill = bill + tip_percentage 
+total_bill_per_people = total_bill / people
+final_amount = round(total_bill_per_people , 2)
+print(final_amount)

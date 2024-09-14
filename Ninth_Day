@@ -20,12 +20,31 @@ for student in student_scores :
         student_grades[student] = "Pass"
 print(student_grades)
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+travel_log = [
+    {
+        "country": "France",
+        "visits": 12,
+        "cities": ["Paris", "Lille", "Dijon"]
+    },
+    {
+        "country": "Germany",
+        "visits": 5,
+        "cities": ["Berlin", "Hamburg", "Stuttgart"]
+    },
+]
+def add_new_country(country_, visits_, cities_):
+    new_country = {
+        "country": country_,
+        "visits": visits_,
+        "cities": cities_
+    }
+    travel_log.append(new_country)
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
+---------------------------------------------------------------------------------------------------------------------------
 from replit import clear
-
 from art import logo
-
 print(logo)
-
 bids = {}
 bidding_finished = False
 

@@ -20,3 +20,40 @@ month = int(input("Enter a month: "))
 days = days_in_month(year, month)
 print(days)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Calculator Project start
+#add 
+def add(n1,n2):
+  return n1 + n2
+#Subract
+def subtract(n1,n2):
+  return n1 - n2
+#Multiply
+def multiply(n1,n2):
+  return n1 * n2
+#division 
+def divide(n1,n2):
+  return n1 / n2
+#creating a dicionary Operaions having Values
+operations = {
+  "+": add,
+  "-": subtract,
+  "*": multiply,
+  "/": divide
+}
+num1 = input("Enter the first number: ")
+num2 = input("Enter the second number: ")
+for operator in operations:
+  print(operator)
+choice = input("Enter the operator you want to perform: ")
+function = operations[choice]
+result = function(int(num1),int(num2))
+print(f"{num1} {choice} {num2} = {result}")
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

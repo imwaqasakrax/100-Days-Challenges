@@ -49,3 +49,47 @@ if direction == "encode":
   encrypt(plain_text=text, shift_amount=shift)
 elif direction == "decode":
   decrypt(cipher_text=text, shift_amount=shift)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def spacex_to_earth_time(minutes, seconds):
+    # Conversion ratio: 1 SpaceX minute = 3 Earth minutes
+    conversion_ratio = 1 / 3  # Earth minutes per SpaceX minute
+    
+    # Convert input SpaceX time into total SpaceX seconds
+    total_spacex_seconds = minutes * 60 + seconds
+    
+    # Convert SpaceX seconds to Earth seconds using the ratio
+    total_earth_seconds = total_spacex_seconds * conversion_ratio
+    
+    # Convert Earth seconds to Earth minutes and round to the nearest integer
+    earth_minutes = round(total_earth_seconds / 60)
+    
+    return earth_minutes
+
+# Example usage:
+print(spacex_to_earth_time(1000, 20))  # Output: 334
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def minimumBottles(self, gallons):
+        # Calculate the total gallons
+        total_gallons = sum(gallons)
+        
+        # Count the number of '1's in the binary representation of total_gallons
+        min_bottles = bin(total_gallons).count('1')
+        
+        return min_bottles
+
+# Test cases
+solution = Solution()
+
+# Example 1
+gallons1 = [10, 7]
+print(f"Gallons: {gallons1}, Minimum Bottles: {solution.minimumBottles(gallons1)}")  # Output: 2
+
+# Example 2
+gallons2 = [10, 7, 5]
+print(f"Gallons: {gallons2}, Minimum Bottles: {solution.minimumBottles(gallons2)}")  # Output: 3
+
+# Example 3
+gallons3 = [5, 3]
+print(f"Gallons: {gallons3}, Minimum Bottles: {solution.minimumBottles(gallons3)}")  # Output: 2
+

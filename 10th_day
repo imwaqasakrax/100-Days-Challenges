@@ -88,6 +88,20 @@ def calculator():
       calculator()
 
 calculator()
+--------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def sumOfCubes(self, num):
+        # Convert the number to a string to iterate through its digits
+        digits = [int(digit) for digit in str(num)]
+        # Calculate the cube of each digit and sum them
+        result = sum(digit ** 3 for digit in digits)
+        return result
+
+# Example Usage:
+solution = Solution()
+num = 25
+result = solution.sumOfCubes(num)
+print(f"The sum of cubes of digits of {num} is: {result}")
 
 
 

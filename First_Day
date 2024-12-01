@@ -27,6 +27,35 @@ print(b)
 #3. Ask the user for the name of a pet.
 #4. Combine the name of their city and pet and show them their band name.
 #5. Make sure the input cursor shows on a new line:
+---------------------------------------------------------------------------------------------------------------------------------------
+def separate_cities_by_country(data):
+    result = {}
+    for item in data:
+        country = item["country"]
+        city = item["city"]
+        country_id = item["id"]
+        
+        # Ensure the country is a key in the result dictionary
+        if country not in result:
+            result[country] = {"ids": [], "cities": []}
+        
+        # Append city and ID to the respective lists
+        result[country]["ids"].append(country_id)
+        result[country]["cities"].append(city)
+    
+    return result
+
+# Sample list with dictionaries
+data = [
+    {"id": 1, "country": "Pakistan", "city": "Karachi"},
+    {"id": 2, "country": "India", "city": "Mumbai"},
+    {"id": 3, "country": "Pakistan", "city": "Lahore"},
+]
+
+# Separate data by country
+separated_data = separate_cities_by_country(data)
+print(separated_data)
+
 
 print("Wellcome to the Band Name Generator")
 city = input("What's name of the city you grew up in?\n")
